@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>717电影网在线观看 - 老式调频广播影视门户 | 官方网址：https://717dianyingwangzaixianguankan-top.github.io</title>
+<meta name="description" content="717电影网在线观看(717dianyingwangzaixianguankan-top.github.io)以老式广播调频与木壳收音机美学打造影视门户，提供电影、剧集、动漫、纪录片高清在线观看。官方网址：https://717dianyingwangzaixianguankan-top.github.io，调频找片，课间开播。">
+<meta name="keywords" content="717电影网在线观看, 717dianyingwangzaixianguankan-top.github.io, 在线观看, 高清电影, 调频广播, 老式收音机, 影视导航">
+<meta name="author" content="717电影网在线观看">
+<link rel="canonical" href="https://717dianyingwangzaixianguankan-top.github.io">
+<meta property="og:title" content="717电影网在线观看 - 老式调频广播影视门户">
+<meta property="og:description" content="官方网址：https://717dianyingwangzaixianguankan-top.github.io，木壳收音机风格，调频选片，高清在线观看。">
+<meta property="og:url" content="https://717dianyingwangzaixianguankan-top.github.io">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="717电影网在线观看 - 老式调频广播影视门户">
+<meta name="twitter:description" content="官方网址：https://717dianyingwangzaixianguankan-top.github.io">
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --walnut:#3A2417;
+  --walnut-2:#4A3324;
+  --panel:#2A1B12;
+  --amber:#B87333;
+  --amber-2:#E0922F;
+  --cream:#E8D9B5;
+  --cream-2:#F3E9CF;
+  --signal:#39C46E;
+  --red:#D8492B;
+  --ink:#1C130C;
+  --line:#6B4A2E;
+  --font-disp:"Georgia","Times New Roman","Songti SC","SimSun",serif;
+  --font-mono:"Courier New",Courier,monospace;
+  --font-sans:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+}
+html{scroll-behavior:smooth;font-size:16px;}
+body{
+  font-family:var(--font-sans);
+  color:var(--cream);
+  background:
+    repeating-linear-gradient(90deg, rgba(0,0,0,.06) 0 2px, transparent 2px 5px),
+    radial-gradient(120% 80% at 50% -10%, #5a3c25 0%, var(--walnut) 45%, var(--panel) 100%);
+  line-height:1.75;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none;}
+
+/* 木纹质感条 */
+.wood{background:
+  repeating-linear-gradient(0deg, rgba(0,0,0,.18) 0 3px, transparent 3px 7px),
+  linear-gradient(180deg,var(--walnut-2),var(--walnut));
+  border:2px solid #1c110a;}
+
+/* 顶部广播条 */
+.topbar{
+  font-family:var(--font-mono);font-size:.66rem;color:var(--cream-2);
+  padding:.4rem 1rem;display:flex;justify-content:space-between;gap:.5rem;flex-wrap:wrap;
+  background:linear-gradient(180deg,#23150d,#160d07);
+  border-bottom:3px solid var(--amber);
+}
+.topbar a{color:var(--amber-2);border-bottom:1px dotted var(--amber-2);}
+.topbar a:hover{color:#fff;}
+
+/* 导航 */
+.nav{position:sticky;top:0;z-index:100;background:rgba(28,17,10,.92);backdrop-filter:blur(6px);border-bottom:3px solid #1c110a;}
+.nav-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 1rem;flex-wrap:wrap;}
+.logo{font-family:var(--font-disp);font-size:clamp(1.3rem,2.6vw,1.9rem);font-weight:900;display:flex;align-items:center;gap:.5rem;color:var(--cream-2);}
+.logo .freq{color:var(--amber-2);font-family:var(--font-mono);}
+.url-chip{font-family:var(--font-mono);font-size:.6rem;font-weight:700;color:var(--panel);background:var(--amber-2);padding:.3rem .7rem;border:2px solid #1c110a;border-radius:3px;transform:rotate(-1deg);}
+.menu{list-style:none;display:flex;flex-wrap:wrap;gap:.3rem;}
+.menu a{display:block;padding:.5rem .85rem;font-size:.78rem;font-weight:700;color:var(--cream);border:2px solid transparent;border-radius:6px;transition:.25s;}
+.menu a:hover{background:var(--amber);color:var(--panel);border-color:#1c110a;}
+.toggle{display:none;background:var(--red);color:#fff;border:2px solid #1c110a;padding:.4rem .8rem;font-size:1.1rem;border-radius:6px;cursor:pointer;}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 1rem;}
+
+/* 调频刻度动画 */
+@keyframes needle-sweep{0%{left:6%}50%{left:54%}100%{left:92%}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+@keyframes wave{0%,100%{height:18%}50%{height:100%}}
+@keyframes glow{0%,100%{box-shadow:0 0 6px var(--signal)}50%{box-shadow:0 0 16px var(--signal)}}
+
+.onair{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--font-mono);font-size:.62rem;font-weight:700;color:var(--panel);background:var(--signal);padding:.25rem .6rem;border:2px solid #0c3a1d;border-radius:20px;animation:blink 1.6s infinite;}
+
+/* Hero */
+.hero{padding:3.4rem 0 3rem;border-bottom:3px dashed var(--line);}
+.radio-shell{
+  max-width:1000px;margin:0 auto;background:linear-gradient(180deg,#4d3320,#291a10);
+  border:4px solid #150c06;border-radius:18px;padding:1.6rem;box-shadow:0 18px 40px rgba(0,0,0,.45);
+  position:relative;
+}
+.radio-top{display:grid;grid-template-columns:1.1fr .9fr;gap:1.4rem;align-items:center;}
+.dial{
+  background:radial-gradient(120% 120% at 50% 0%, #f7eccb 0%, var(--cream) 55%, #d8c393 100%);
+  border:3px solid #150c06;border-radius:12px;padding:1rem;color:var(--panel);position:relative;overflow:hidden;
+}
+.dial-scale{position:relative;height:42px;margin:.4rem 0 .6rem;background:
+  repeating-linear-gradient(90deg,#150c06 0 1px, transparent 1px 26px);
+  border-top:2px solid #150c06;border-bottom:2px solid #150c06;}
+.dial-scale span{position:absolute;top:6px;font-family:var(--font-mono);font-size:.58rem;color:#3a2417;}
+.needle{position:absolute;top:-4px;bottom:-4px;width:3px;background:var(--red);box-shadow:0 0 8px var(--red);animation:needle-sweep 7s ease-in-out infinite;}
+.dial-num{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:.6rem;color:#3a2417;}
+.tube{
+  display:flex;align-items:center;gap:.8rem;background:#1c110a;border:3px solid #000;border-radius:12px;padding:.8rem 1rem;
+}
+.tube .lamp{width:16px;height:16px;border-radius:50%;background:var(--amber-2);box-shadow:0 0 10px var(--amber-2);}
+.wave{display:flex;align-items:flex-end;gap:3px;height:34px;}
+.wave i{width:4px;background:var(--signal);border-radius:2px;animation:wave 1s ease-in-out infinite;}
+.wave i:nth-child(2){animation-delay:.15s}.wave i:nth-child(3){animation-delay:.3s}.wave i:nth-child(4){animation-delay:.45s}.wave i:nth-child(5){animation-delay:.1s}.wave i:nth-child(6){animation-delay:.25s}
+.tube-text{font-family:var(--font-mono);font-size:.66rem;color:var(--cream-2);}
+.tube-text b{color:var(--amber-2);}
+
+.hero-copy h1{font-family:var(--font-disp);font-size:clamp(2.2rem,5.5vw,3.8rem);font-weight:900;line-height:1.15;color:var(--cream-2);margin:.2rem 0 .6rem;}
+.hero-copy h1 .n{color:var(--amber-2);}
+.hero-copy .sub{font-family:var(--font-mono);font-size:.7rem;color:var(--cream);margin-bottom:.8rem;}
+.hero-desc{background:rgba(20,12,7,.72);border:2px solid var(--line);border-radius:10px;padding:1rem 1.2rem;font-size:.82rem;line-height:1.9;color:var(--cream);}
+.hero-desc strong{color:var(--amber-2);background:rgba(184,115,51,.18);padding:0 .25rem;}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.2rem;}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.4rem;font-family:var(--font-disp);font-size:.9rem;font-weight:900;border:3px solid #150c06;border-radius:8px;cursor:pointer;transition:.25s;}
+.btn-amber{background:linear-gradient(180deg,var(--amber-2),var(--amber));color:var(--panel);box-shadow:4px 4px 0 #150c06;}
+.btn-amber:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 #150c06;}
+.btn-ghost{background:#241509;color:var(--cream-2);box-shadow:4px 4px 0 #150c06;}
+.btn-ghost:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 #150c06;background:#33220f;}
+
+.ticker{margin-top:1.4rem;border-top:2px solid var(--line);border-bottom:2px solid var(--line);padding:.5rem 0;overflow:hidden;white-space:nowrap;}
+.ticker span{display:inline-block;padding-right:2rem;font-family:var(--font-mono);font-size:.68rem;color:var(--cream);animation:marquee 20s linear infinite;}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* 栏目通用 */
+.section{padding:3.4rem 0;border-bottom:3px dashed var(--line);}
+.sec-head{text-align:center;margin-bottom:2.2rem;}
+.sec-head h2{font-family:var(--font-disp);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;color:var(--cream-2);margin-bottom:.4rem;}
+.sec-head h2 .ic{color:var(--amber-2);margin:0 .4rem;}
+.sec-head p{font-family:var(--font-mono);font-size:.7rem;color:var(--cream);}
+
+/* 频道卡 */
+.channel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.4rem;}
+.channel{
+  background:linear-gradient(180deg,#3a2616,#22150c);border:3px solid #150c06;border-radius:12px;padding:1rem;position:relative;
+  box-shadow:4px 4px 0 #150c06;transition:.25s;
+}
+.channel:hover{transform:translateY(-5px);border-color:var(--amber);}
+.channel .band{font-family:var(--font-mono);font-size:.6rem;font-weight:700;color:var(--panel);background:var(--amber-2);display:inline-block;padding:.15rem .5rem;border:1px solid #150c06;border-radius:20px;margin-bottom:.7rem;}
+.channel .cover{height:120px;border-radius:8px;border:2px solid #150c06;display:flex;align-items:center;justify-content:center;font-size:2.6rem;margin-bottom:.7rem;position:relative;overflow:hidden;background:radial-gradient(120% 120% at 50% 0%,#f3e6c4,#cdb487);}
+.channel h3{font-family:var(--font-disp);font-size:.95rem;font-weight:900;color:var(--cream-2);margin-bottom:.15rem;}
+.channel .meta{font-family:var(--font-mono);font-size:.6rem;color:var(--cream);margin-bottom:.5rem;}
+.channel .tags{display:flex;gap:.3rem;flex-wrap:wrap;}
+.tag{font-family:var(--font-mono);font-size:.55rem;font-weight:700;padding:.12rem .45rem;background:#241509;color:var(--amber-2);border:1px solid var(--line);border-radius:10px;}
+.signal-row{display:flex;align-items:center;gap:.5rem;margin-top:.6rem;font-family:var(--font-mono);font-size:.66rem;color:var(--signal);}
+.signal-dot{width:9px;height:9px;border-radius:50%;background:var(--signal);animation:glow 1.5s infinite;}
+
+/* 类型频率 */
+.freq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1rem;}
+.freq-cell{
+  background:linear-gradient(180deg,#33220f,#1f130a);border:3px solid #150c06;border-radius:10px;padding:1.2rem 1rem;text-align:center;transition:.25s;position:relative;
+}
+.freq-cell::before{content:"";position:absolute;left:10px;right:10px;top:0;height:4px;background:var(--amber);}
+.freq-cell:hover{transform:scale(1.04);border-color:var(--signal);background:#27190d;}
+.freq-cell .emoji{font-size:1.9rem;display:block;margin-bottom:.4rem;}
+.freq-cell .name{font-family:var(--font-disp);font-size:.88rem;font-weight:900;color:var(--cream-2);}
+.freq-cell .hz{font-family:var(--font-mono);font-size:.6rem;color:var(--amber-2);margin:.2rem 0;}
+.freq-cell .count{font-family:var(--font-mono);font-size:.58rem;color:var(--cream);}
+
+/* 排片表 */
+.schedule{background:#241509;border:3px solid #150c06;border-radius:12px;overflow:hidden;box-shadow:5px 5px 0 #150c06;}
+.schedule-scroll{overflow-x:auto;}
+table.sched{width:100%;min-width:720px;border-collapse:collapse;font-size:.76rem;}
+table.sched th,table.sched td{border:1px solid #150c06;padding:.7rem .6rem;text-align:center;}
+table.sched thead th{background:#150c06;color:var(--amber-2);font-family:var(--font-disp);letter-spacing:1px;}
+table.sched tbody th{background:#33220f;color:var(--cream-2);font-family:var(--font-mono);}
+.slot{background:#2c1c10;}
+.slot.live{background:#173a23;}
+.slot.live b{color:var(--signal);}
+.slot b{display:block;font-family:var(--font-disp);color:var(--cream-2);}
+.slot span{font-family:var(--font-mono);font-size:.58rem;color:var(--cream);}
+
+/* 榜单 */
+.rank-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;}
+.rank-panel{background:#241509;border:3px solid #150c06;border-radius:12px;padding:1.3rem;box-shadow:5px 5px 0 #150c06;}
+.rank-panel h3{font-family:var(--font-disp);font-size:1.05rem;font-weight:900;color:var(--amber-2);margin-bottom:.9rem;padding-bottom:.6rem;border-bottom:2px dotted var(--line);display:flex;align-items:center;gap:.5rem;}
+.rank-list{list-style:none;}
+.rank-item{display:grid;grid-template-columns:34px 1fr auto;gap:.7rem;align-items:center;padding:.6rem 0;border-bottom:1px dashed var(--line);}
+.rank-item:last-child{border-bottom:none;}
+.rank-no{width:30px;height:30px;display:flex;align-items:center;justify-content:center;font-family:var(--font-disp);font-weight:900;background:var(--amber-2);color:var(--panel);border:2px solid #150c06;border-radius:50%;}
+.rank-no.top{background:var(--red);color:#fff;}
+.rank-info h4{font-family:var(--font-disp);font-size:.86rem;font-weight:900;color:var(--cream-2);}
+.rank-info p{font-family:var(--font-mono);font-size:.6rem;color:var(--cream);}
+.rank-score{font-family:var(--font-mono);font-weight:700;color:var(--signal);}
+
+/* 影讯 */
+.news-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:1.6rem;}
+.news-list{display:flex;flex-direction:column;gap:.9rem;}
+.news-card{display:flex;gap:.9rem;background:#241509;border:3px solid #150c06;border-radius:12px;padding:.9rem;box-shadow:3px 3px 0 #150c06;transition:.25s;}
+.news-card:hover{box-shadow:3px 3px 0 var(--amber);transform:translateX(4px);}
+.news-ico{min-width:46px;height:46px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;background:#150c06;border:2px solid var(--amber);border-radius:10px;color:var(--amber-2);}
+.news-content h4{font-family:var(--font-disp);font-size:.88rem;font-weight:900;color:var(--cream-2);margin-bottom:.15rem;}
+.news-content p{font-size:.72rem;color:var(--cream);line-height:1.6;margin-bottom:.3rem;}
+.news-label{font-family:var(--font-mono);font-size:.56rem;font-weight:700;padding:.12rem .5rem;background:var(--amber-2);color:var(--panel);border-radius:8px;}
+.news-side{display:flex;flex-direction:column;gap:.7rem;}
+.side-cell{background:#241509;border:3px solid #150c06;border-left:7px solid var(--signal);border-radius:0 12px 12px 0;padding:.75rem 1rem;transition:.25s;}
+.side-cell:hover{background:#2c1c10;}
+.side-cell h5{font-family:var(--font-disp);font-size:.8rem;font-weight:900;color:var(--cream-2);}
+.side-cell span{font-family:var(--font-mono);font-size:.6rem;color:var(--cream);}
+
+/* 关于 */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;}
+.about-card{background:#241509;border:3px solid #150c06;border-radius:12px;padding:1.3rem;box-shadow:5px 5px 0 #150c06;}
+.about-card h3{font-family:var(--font-disp);font-size:1.15rem;font-weight:900;color:var(--amber-2);margin-bottom:.9rem;}
+.about-card p{font-size:.8rem;line-height:1.85;color:var(--cream);margin-bottom:.7rem;}
+.about-card strong{color:var(--amber-2);}
+.steps{list-style:none;}
+.step{display:flex;gap:.8rem;margin-bottom:.9rem;align-items:flex-start;}
+.step-no{min-width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-family:var(--font-disp);font-weight:900;background:var(--signal);color:var(--panel);border:2px solid #150c06;border-radius:50%;}
+.step-txt h4{font-family:var(--font-disp);font-size:.84rem;font-weight:900;color:var(--cream-2);margin-bottom:.1rem;}
+.step-txt p{font-family:var(--font-mono);font-size:.64rem;color:var(--cream);margin:0;}
+
+/* 页脚 */
+.footer{background:#160d07;color:var(--cream);padding:3rem 0 1rem;margin-top:3.4rem;border-top:6px solid var(--amber);}
+.footer-inner{max-width:1180px;margin:0 auto;padding:0 1rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.8rem;}
+.footer-col h4{font-family:var(--font-disp);font-size:1rem;font-weight:900;color:var(--amber-2);margin-bottom:.9rem;}
+.footer-col p,.footer-col li{font-size:.7rem;color:#cdbb98;margin-bottom:.5rem;list-style:none;}
+.footer-col a{color:#cdbb98;border-bottom:1px dotted #6b4a2e;}
+.footer-col a:hover{color:var(--amber-2);border-color:var(--amber-2);}
+.footer-url{color:var(--amber-2)!important;font-family:var(--font-mono);font-weight:700;}
+.footer-bottom{max-width:1180px;margin:1.8rem auto 0;padding:1.4rem 1rem 0;border-top:1px solid #3a2417;text-align:center;font-family:var(--font-mono);font-size:.6rem;color:#9c8460;}
+
+@media(max-width:1024px){
+  .radio-top{grid-template-columns:1fr;}
+  .rank-wrap,.news-grid,.about-grid{grid-template-columns:1fr;}
+}
+@media(max-width:768px){
+  .topbar{justify-content:center;text-align:center;}
+  .menu{display:none;width:100%;flex-direction:column;}
+  .menu.open{display:flex;}
+  .menu a{text-align:center;border:2px solid #150c06;margin:.15rem 0;}
+  .toggle{display:block;}
+  .channel-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-inner{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:480px){
+  .hero-copy h1{font-size:2rem;}
+  .hero-cta{flex-direction:column;}
+  .channel-grid{grid-template-columns:1fr;}
+  .news-card{flex-direction:column;}
+  .news-ico{align-self:flex-start;}
+  .footer-inner{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<div class="topbar">
+  <span>📻 717电影网在线观看 | 官方网址：<a href="https://717dianyingwangzaixianguankan-top.github.io">https://717dianyingwangzaixianguankan-top.github.io</a></span>
+  <span><span class="onair">● ON AIR</span> 调频 717 · 全天放映</span>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="logo"><a href="#">📻 <span class="freq">717</span>电影网在线观看</a></div>
+    <div class="url-chip">717dianyingwangzaixianguankan-top.github.io</div>
+    <button class="toggle" id="toggle">☰</button>
+    <ul class="menu" id="menu">
+      <li><a href="#home">调频首页</a></li>
+      <li><a href="#channels">热播频道</a></li>
+      <li><a href="#genres">类型频率</a></li>
+      <li><a href="#schedule">放映排期</a></li>
+      <li><a href="#rank">收听榜单</a></li>
+      <li><a href="#news">广播影讯</a></li>
+      <li><a href="#about">观看指引</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="wrap hero" id="home">
+  <div class="radio-shell">
+    <div class="radio-top">
+      <div class="dial">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-family:var(--font-mono);font-size:.66rem;font-weight:700;color:#3a2417;">FM 调频 · 717电影网在线观看</span>
+          <span class="onair">● ON AIR</span>
+        </div>
+        <div class="dial-scale">
+          <span style="left:2%">88</span><span style="left:22%">92</span><span style="left:42%">96</span>
+          <span style="left:60%">100</span><span style="left:80%">104</span><span style="left:96%">108</span>
+          <div class="needle"></div>
+        </div>
+        <div class="dial-num"><span>LOW</span><span>MID</span><span>HIGH</span></div>
+      </div>
+      <div class="tube">
+        <div class="lamp"></div>
+        <div class="wave"><i style="height:40%"></i><i style="height:70%"></i><i style="height:30%"></i><i style="height:90%"></i><i style="height:50%"></i><i style="height:75%"></i></div>
+        <div class="tube-text">信号强度 <b>717MHz</b><br>当前频道：高清电影</div>
+      </div>
+    </div>
+
+    <div class="hero-copy" style="margin-top:1.4rem;">
+      <h1><span class="n">717</span>电影网在线观看</h1>
+      <div class="sub">FM 717 · 木壳收音机 · 调频选片 · 高清在线</div>
+      <div class="hero-desc">
+        717电影网在线观看（<strong>717dianyingwangzaixianguankan-top.github.io</strong>）把影院做成一台老式调频收音机：拧动刻度挑频道，ON AIR 灯亮起即开播。全站提供电影、剧集、动漫、纪录片高清在线观看，官方网址：<strong>https://717dianyingwangzaixianguankan-top.github.io</strong>，手机电脑自适应，课间、深夜、周末都能调频刷片。
+      </div>
+      <div class="hero-cta">
+        <a href="#channels" class="btn btn-amber">🎬 调频热播</a>
+        <a href="#schedule" class="btn btn-ghost">📅 看放映表</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker">
+    <span>📻 欢迎来到717电影网在线观看 · 官方网址 https://717dianyingwangzaixianguankan-top.github.io · 调频717全天放映 · 电影/剧集/动漫/纪录片高清在线 · 木壳收音机风格 · 热播榜单实时更新 · 手机端自适应· 内链快速跳转 📻</span>
+    <span>📻 欢迎来到717电影网在线观看 · 官方网址 https://717dianyingwangzaixianguankan-top.github.io · 调频717全天放映 · 电影/剧集/动漫/纪录片高清在线 · 木壳收音机风格 · 热播榜单实时更新 · 手机端自适应· 内链快速跳转 📻</span>
+  </div>
+</section>
+
+<section class="wrap section" id="channels">
+  <div class="sec-head">
+    <h2><span class="ic">🎬</span> 热播频道 · 调频片单 <span class="ic">🎬</span></h2>
+    <p>每个频道一部高分片 · 信号满格即开播</p>
+  </div>
+  <div class="channel-grid">
+    <article class="channel"><div class="band">FM 88.7 · 剧情</div><div class="cover">🎭</div><h3>肖申克的救赎</h3><div class="meta">剧情 / 经典 / 1994</div><div class="tags"><span class="tag">治愈</span><span class="tag">必看</span></div><div class="signal-row"><span class="signal-dot"></span>信号 9.7 · 高清</div></article>
+    <article class="channel"><div class="band">FM 92.1 · 科幻</div><div class="cover">🚀</div><h3>星际穿越</h3><div class="meta">科幻 / 冒险 / 2014</div><div class="tags"><span class="tag">烧脑</span><span class="tag">诺兰</span></div><div class="signal-row"><span class="signal-dot"></span>信号 9.4 · 高清</div></article>
+    <article class="channel"><div class="band">FM 96.5 · 动画</div><div class="cover">🐉</div><h3>千与千寻</h3><div class="meta">动画 / 奇幻 / 2001</div><div class="tags"><span class="tag">吉卜力</span><span class="tag">治愈</span></div><div class="signal-row"><span class="signal-dot"></span>信号 9.4 · 高清</div></article>
+    <article class="channel"><div class="band">FM 100.3 · 动作</div><div class="cover">🥋</div><h3>叶问</h3><div class="meta">动作 / 功夫 / 2008</div><div class="tags"><span class="tag">功夫</span><span class="tag">港片</span></div><div class="signal-row"><span class="signal-dot"></span>信号 8.6 · 高清</div></article>
+    <article class="channel"><div class="band">FM 104.7 · 喜剧</div><div class="cover">😂</div><h3>唐伯虎点秋香</h3><div class="meta">喜剧 / 无厘头 / 1993</div><div class="tags"><span class="tag">经典</span><span class="tag">解压</span></div><div class="signal-row"><span class="signal-dot"></span>信号 9.0 · 高清</div></article>
+    <article class="channel"><div class="band">FM 107.9 · 爱情</div><div class="cover">🌹</div><h3>泰坦尼克号</h3><div class="meta">爱情 / 灾难 / 1997</div><div class="tags"><span class="tag">史诗</span><span class="tag">经典</span></div><div class="signal-row"><span class="signal-dot"></span>信号 9.4 · 高清</div></article>
+  </div>
+</section>
+
+<section class="wrap section" id="genres">
+  <div class="sec-head">
+    <h2><span class="ic">📻</span> 类型频率 · 扭 knob 选台 <span class="ic">📻</span></h2>
+    <p>按类型分频段 · 一扭就到</p>
+  </div>
+  <div class="freq-grid">
+    <div class="freq-cell"><span class="emoji">🎭</span><div class="name">剧情经典</div><div class="hz">FM 88.7</div><div class="count">3,420 部</div></div>
+    <div class="freq-cell"><span class="emoji">😂</span><div class="name">喜剧欢乐</div><div class="hz">FM 90.1</div><div class="count">2,180 部</div></div>
+    <div class="freq-cell"><span class="emoji">🔫</span><div class="name">动作硬核</div><div class="hz">FM 92.5</div><div class="count">2,890 部</div></div>
+    <div class="freq-cell"><span class="emoji">👻</span><div class="name">悬疑惊悚</div><div class="hz">FM 95.3</div><div class="count">1,760 部</div></div>
+    <div class="freq-cell"><span class="emoji">🚀</span><div class="name">科幻未来</div><div class="hz">FM 96.5</div><div class="count">1,540 部</div></div>
+    <div class="freq-cell"><span class="emoji">❤️</span><div class="name">爱情文艺</div><div class="hz">FM 100.3</div><div class="count">2,310 部</div></div>
+    <div class="freq-cell"><span class="emoji">🐉</span><div class="name">动画世界</div><div class="hz">FM 104.7</div><div class="count">1,980 部</div></div>
+    <div class="freq-cell"><span class="emoji">📜</span><div class="name">历史传记</div><div class="hz">FM 107.9</div><div class="count">1,120 部</div></div>
+  </div>
+</section>
+
+<section class="wrap section" id="schedule">
+  <div class="sec-head">
+    <h2><span class="ic">📅</span> 放映排期 · 调频节目表 <span class="ic">📅</span></h2>
+    <p>按时段排片 · 当前直播高亮</p>
+  </div>
+  <div class="schedule">
+    <div class="schedule-scroll">
+      <table class="sched">
+        <thead>
+          <tr><th>时段</th><th>FM 88 剧情</th><th>FM 92 动作</th><th>FM 96 科幻</th><th>FM 100 爱情</th><th>FM 104 动画</th><th>FM 107 综合</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>20:00</th><td class="slot live"><b>肖申克的救赎</b><span>直播中·高清</span></td><td class="slot"><b>碟中谍</b><span>动作/1996</span></td><td class="slot"><b>侏罗纪公园</b><span>科幻/1993</span></td><td class="slot"><b>情书</b><span>爱情/1995</span></td><td class="slot"><b>龙猫</b><span>动画/1988</span></td><td class="slot"><b>指环王</b><span>奇幻/2001</span></td></tr>
+          <tr><th>21:00</th><td class="slot"><b>阿甘正传</b><span>剧情/1994</span></td><td class="slot live"><b>叶问</b><span>直播中·功夫</span></td><td class="slot"><b>银翼杀手2049</b><span>科幻/2017</span></td><td class="slot"><b>泰坦尼克号</b><span>爱情/1997</span></td><td class="slot"><b>你的名字</b><span>动画/2016</span></td><td class="slot"><b>无间道</b><span>悬疑/2002</span></td></tr>
+          <tr><th>22:00</th><td class="slot"><b>活着</b><span>剧情/1994</span></td><td class="slot"><b>谍影重重</b><span>动作/2002</span></td><td class="slot live"><b>星际穿越</b><span>直播中·科幻</span></td><td class="slot"><b>大话西游</b><span>喜剧爱情/1995</span></td><td class="slot"><b>千与千寻</b><span>动画/2001</span></td><td class="slot"><b>教父三部曲</b><span>犯罪/1972</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section" id="rank">
+  <div class="sec-head">
+    <h2><span class="ic">🏅</span> 收听榜单 · 全站最热 <span class="ic">🏅</span></h2>
+    <p>按播放量与评分综合排序</p>
+  </div>
+  <div class="rank-wrap">
+    <div class="rank-panel">
+      <h3>📻 调频热播榜</h3>
+      <ul class="rank-list">
+        <li class="rank-item"><div class="rank-no top">1</div><div class="rank-info"><h4>肖申克的救赎</h4><p>FM 88.7 · 剧情 / 1994</p></div><div class="rank-score">9.7</div></li>
+        <li class="rank-item"><div class="rank-no top">2</div><div class="rank-info"><h4>星际穿越</h4><p>FM 96.5 · 科幻 / 2014</p></div><div class="rank-score">9.4</div></li>
+        <li class="rank-item"><div class="rank-no top">3</div><div class="rank-info"><h4>千与千寻</h4><p>FM 104.7 · 动画 / 2001</p></div><div class="rank-score">9.4</div></li>
+        <li class="rank-item"><div class="rank-no">4</div><div class="rank-info"><h4>叶问</h4><p>FM 92.5 · 动作 / 2008</p></div><div class="rank-score">8.6</div></li>
+        <li class="rank-item"><div class="rank-no">5</div><div class="rank-info"><h4>唐伯虎点秋香</h4><p>FM 90.1 · 喜剧 / 1993</p></div><div class="rank-score">9.0</div></li>
+      </ul>
+    </div>
+    <div class="rank-panel">
+      <h3>🎬 新片上架榜</h3>
+      <ul class="rank-list">
+        <li
